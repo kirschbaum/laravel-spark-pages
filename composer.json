@@ -1,0 +1,23 @@
+{
+  "name": "kirschbaum/laravel-spark-pages/",
+  "description": "Content management-style pages for Laravel Spark",
+  "authors": [
+      {
+          "name": "Nathan Kirschbaum",
+          "email": "nathan@nathankirschbaum.com"
+      },
+     {
+      "name": "Bryan Miller",
+      "email": "bryan@kirschbaumdevelopment.com"
+    }
+  ],
+  "keywords": ["laravel-spark", "content-management", "pages"],
+  "require": {
+    "php": ">=5.5.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Kirschbaum\\LaravelSparkPages\\": "src/"
+    }
+  }
+}

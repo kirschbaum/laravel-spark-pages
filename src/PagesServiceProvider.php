@@ -13,7 +13,10 @@ class PagesServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->loadViewsFrom(__DIR__.'/views', 'pages');
+        $this->publishes([
+            __DIR__.'/views' => base_path('resources/views/kirschbaum/laravel-spark-pages/'),
+        ]);
     }
 
     /**

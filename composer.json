@@ -18,7 +18,7 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "Kirschbaum\\LaravelSparkPages\\": "src/"
+            "Kirschbaum\\LaravelSparkPages\\": "vendor/kirschbaum/laravel-spark-pages/src/"
         }
     }
 }

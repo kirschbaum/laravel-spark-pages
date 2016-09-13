@@ -14,7 +14,7 @@ class PageController extends Controller {
      */
     public function create()
     {
-        return view('pages.create_edit');
+        return view('pages::create_edit');
     }
 
     /**
@@ -63,7 +63,7 @@ class PageController extends Controller {
     public function edit($slug)
     {
         $page = Page::whereSlug($slug)->firstOrFail();
-        return view('pages.create_edit', compact(['page']));
+        return view('pages::create_edit', compact(['page']));
     }
 
     /**

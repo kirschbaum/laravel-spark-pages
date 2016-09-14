@@ -4,9 +4,9 @@
 
 This package allows for the easy adding and editing of pages to your Laravel Spark app.
 
-Non-programmers can easily build and maintenance of these pages, as they work like a basic content management system.
+Non-programmers can easily build and maintain these pages, as they work like an extremely easy content management system.
 
-This can be useful for pages similar to standard "About", "Contact", "Terms of Service" and "Privacy Policy" styles.
+This can be useful for pages similar to standard "About", "Contact", "Terms of Service" and "Privacy Policy" styled-pages.
 
 ## Installation
 

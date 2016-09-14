@@ -3,6 +3,7 @@
 namespace Kirschbaum\LaravelSparkPages;
 
 use App\Http\Controllers\Controller;
+use Kirschbaum\LaravelSparkPages\Page;
 use Illuminate\Http\Request;
 //use App\Page;
 
@@ -50,7 +51,7 @@ class PageController extends Controller {
     {
         $page = Page::whereSlug($slug)->firstOrFail();
         if($page->published){
-            return view('pages.display', compact(['page']));
+            return view('laravel-spark-pages::display', compact(['page']));
         }
         return redirect('/login');
     }
@@ -64,7 +65,7 @@ class PageController extends Controller {
     public function edit($slug)
     {
         $page = Page::whereSlug($slug)->firstOrFail();
-        return view('pages::create_edit', compact(['page']));
+        return view('laravel-spark-pages::create_edit', compact(['page']));
     }
 
     /**

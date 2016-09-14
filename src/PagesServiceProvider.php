@@ -13,7 +13,6 @@ class PagesServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/views', 'pages');
         $this->registerRoutes();
         $this->publishMigrations();
         $this->publishViews();
@@ -29,6 +28,7 @@ class PagesServiceProvider extends ServiceProvider
     {
         include __DIR__.'/routes.php';
         $this->app->make('Kirschbaum\LaravelSparkPages\PageController');
+        $this->registerViewFiles();
     }
 
     private function publishViews()
@@ -50,5 +50,10 @@ class PagesServiceProvider extends ServiceProvider
         if (! $this->app->routesAreCached()) {
             require __DIR__ . '/routes.php';
         }
+    }
+
+    private function registerViewFiles()
+    {
+        $this->loadViewsFrom(__DIR__.'/../views', 'laravel-spark-pages');
     }
 }

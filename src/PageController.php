@@ -15,7 +15,7 @@ class PageController extends Controller {
      */
     public function create()
     {
-        return view('pages::create_edit');
+        return view('laravel-spark-pages::create_edit');
     }
 
     /**

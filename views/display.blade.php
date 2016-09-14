@@ -7,6 +7,6 @@
             {!! $page->body !!}
         </div>
 
-        @include('laravel-spark-pages::sidebar')
+        @include('vendor.laravel-spark-pages.sidebar')
     </div>
 @endsection

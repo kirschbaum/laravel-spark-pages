@@ -45,6 +45,10 @@ Add the following line to `resources/assets/js/app.js`
 require('./laravel-spark-pages-components/delete-button');
 ~~~
 
+Make sure to run `gulp`!
+
+## Features
+
 Create new pages for your Laravel Spark application by navigating to `/pages/create`.
 
 After creating a new page, you can navigate to that page by using the slug you entered when creating the page,

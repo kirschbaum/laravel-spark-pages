@@ -6,7 +6,7 @@ This package allows for the easy adding and editing of pages to your Laravel Spa
 
 Non-programmers can easily build and maintain these pages, as they work like an extremely easy content management system.
 
-This can be useful for pages similar to standard "About", "Contact", "Terms of Service" and "Privacy Policy" styled-pages.
+This can be useful for pages such as "About", "Contact", "Terms of Service" and "Privacy Policy" styled-pages.
 
 ## Installation
 
@@ -27,13 +27,13 @@ Publish the package migrations:
 php artisan vendor:publish --provider="Kirschbaum\LaravelSparkPages\PagesServiceProvider" --tag='migrations'
 ~~~
 
-Then run migration to setup the base table:
+Then run migration to setup the pages table:
 
 ~~~
 php artisan migrate
 ~~~
 
-Publish the views and the js:
+Publish the assets:
 
 ~~~
 php artisan vendor:publish --provider="Kirschbaum\LaravelSparkPages\PagesServiceProvider" --tag='assets'

@@ -16,7 +16,7 @@ class PageController extends Controller {
      */
     public function create()
     {
-        return view('laravel-spark-pages::create_edit');
+        return view('vendor.laravel-spark-pages.create_edit');
     }
 
     /**
@@ -51,7 +51,7 @@ class PageController extends Controller {
     {
         $page = Page::whereSlug($slug)->firstOrFail();
         if($page->published){
-            return view('laravel-spark-pages::display', compact(['page']));
+            return view('vendor.laravel-spark-pages.display', compact(['page']));
         }
         return redirect('/login');
     }
@@ -65,7 +65,7 @@ class PageController extends Controller {
     public function edit($slug)
     {
         $page = Page::whereSlug($slug)->firstOrFail();
-        return view('laravel-spark-pages::create_edit', compact(['page']));
+        return view('vendor.laravel-spark-pages.create_edit', compact(['page']));
     }
 
     /**

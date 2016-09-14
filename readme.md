@@ -32,3 +32,22 @@ Then run migration to setup the base table:
 ~~~
 php artisan migrate
 ~~~
+
+Add the following line to `resources/assets/js/app.js`
+
+~~~
+require('./laravel-spark-pages-components/delete-button');
+~~~
+
+Create new pages for your Laravel Spark application by navigating to `/pages/create`.
+
+After creating a new page, you can navigate to that page by using the slug you entered when creating the page,
+and navigating to `/{slug}`.
+
+To edit the page you created, navigate to the page and click on the "edit" button, or alternatively you can
+navigate to `/pages/{slug}/edit`.
+
+You can delete pages by navigating to the edit page, where you will see a "delete" button.
+
+If you want to customize the views, feel free to do so in the following folder:  `resources/views/vendor/laravel-spark-pages/`,
+ which should allow you to update this package without overwriting your customized views.

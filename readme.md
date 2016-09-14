@@ -33,6 +33,12 @@ Then run migration to setup the base table:
 php artisan migrate
 ~~~
 
+Publish the views and the js:
+
+~~~
+php artisan vendor:publish --provider="Kirschbaum\LaravelSparkPages\PagesServiceProvider" --tag='assets'
+~~~
+
 Add the following line to `resources/assets/js/app.js`
 
 ~~~

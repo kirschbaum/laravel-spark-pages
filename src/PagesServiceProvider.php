@@ -16,8 +16,7 @@ class PagesServiceProvider extends ServiceProvider
     {
         $this->registerRoutes();
         $this->publishMigrations();
-        $this->publishViews();
-        $this->publishVueComponents();
+        $this->publishAssets();
     }
 
     /**
@@ -33,12 +32,6 @@ class PagesServiceProvider extends ServiceProvider
         $this->registerViewFiles();
     }
 
-    private function publishViews()
-    {
-        $this->publishes([
-            __DIR__.'/../views/' => base_path('resources/views/vendor/laravel-spark-pages')
-        ], 'views');
-    }
 
     private function publishMigrations()
     {
@@ -59,9 +52,10 @@ class PagesServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/../views', 'laravel-spark-pages');
     }
 
-    private function publishVueComponents()
+    private function publishAssets()
     {
         $this->publishes([
+            __DIR__.'/../views/' => base_path('resources/views/vendor/laravel-spark-pages'),
             __DIR__.'/../js/' => base_path('resources/assets/js/laravel-spark-pages-components')
         ], 'assets');
     }

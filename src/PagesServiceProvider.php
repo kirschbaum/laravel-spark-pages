@@ -3,6 +3,7 @@
 namespace Kirschbaum\LaravelSparkPages;
 
 use Illuminate\Support\ServiceProvider;
+use Kirschbaum\LaravelSparkPages\Page;
 
 class PagesServiceProvider extends ServiceProvider
 {
@@ -16,7 +17,6 @@ class PagesServiceProvider extends ServiceProvider
         $this->registerRoutes();
         $this->publishMigrations();
         $this->publishViews();
-
     }
 
     /**
@@ -28,6 +28,7 @@ class PagesServiceProvider extends ServiceProvider
     {
         include __DIR__.'/routes.php';
         $this->app->make('Kirschbaum\LaravelSparkPages\PageController');
+        $this->app->make('Kirschbaum\LaravelSparkPages\Page');
         $this->registerViewFiles();
     }
 
@@ -56,4 +57,5 @@ class PagesServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__.'/../views', 'laravel-spark-pages');
     }
+
 }

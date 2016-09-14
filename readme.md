@@ -12,6 +12,13 @@ This can be useful for pages similar to standard "About", "Contact", "Terms of S
 
 Add the package by typing `composer require LaravelSparkPages`
 
+The below route must be placed at the VERY BOTTOM of your routes.php file,
+or else the /{slug} route will match every route above and get called 100% of the time.
+
+~~~
+Route::get('/{slug}', '\Kirschbaum\LaravelSparkPages\PageController@show');
+~~~
+
 Add `Kirschbaum\LaravelSparkPages\PagesServiceProvider::class` to the `providers` array in config/app.php.
 
 Publish the package migrations:

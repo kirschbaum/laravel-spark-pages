@@ -8,12 +8,6 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller {
 
-
-    public function index()
-    {
-        dd('testing123');
-    }
-
     /**
      * Show the form for creating a new resource.
      *

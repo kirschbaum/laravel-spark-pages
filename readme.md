@@ -13,3 +13,15 @@ This can be useful for pages similar to standard "About", "Contact", "Terms of S
 Add the package by typing `composer require LaravelSparkPages`
 
 Add `Kirschbaum\LaravelSparkPages\PagesServiceProvider::class` to the `providers` array in config/app.php.
+
+Publish the package migrations:
+
+~~~
+php artisan vendor:publish --provider="Kirschbaum\LaravelSparkPages\PagesServiceProvider" --tag='migrations'
+~~~
+
+Then run migration to setup the base table:
+
+~~~
+php artisan migrate
+~~~

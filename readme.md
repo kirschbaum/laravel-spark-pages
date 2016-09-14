@@ -49,15 +49,18 @@ Make sure to run `gulp`!
 
 ## Features
 
-Create new pages for your Laravel Spark application by navigating to `/pages/create`.
+Create new pages for your Laravel Spark application by navigating to `/pages/create`.  Check the "publish" checkbox
+in order to make the page live on your site.
 
-After creating a new page, you can navigate to that page by using the slug you entered when creating the page,
-and navigating to `/{slug}`.
+You can navigate to the pages you create and publish by using the slug you entered and browsing to `/{slug}`.
 
-To edit the page you created, navigate to the page and click on the "edit" button, or alternatively you can
-navigate to `/pages/{slug}/edit`.
+To edit the page you created, navigate to the page and click on the "edit" button, or navigate directly to `/pages/{slug}/edit`.
 
-You can delete pages by navigating to the edit page, where you will see a "delete" button.
+To take pages offline, uncheck the "publish" checkbox.
 
-If you want to customize the views, feel free to do so in the following folder:  `resources/views/vendor/laravel-spark-pages/`,
- which should allow you to update this package without overwriting your customized views.
+You can delete pages by navigating to the edit page, where a "delete" button is provided.  By default, these are hard deletes,
+so exercise caution when deleting as you will permanently lose the content you have created for that page.  Remember, you can
+simply uncheck the "publish" checkbox instead of completely deleting pages if you'd like to take them offline.
+
+If you want to customize the views, feel free to do so in the following folder:  `resources/views/vendor/laravel-spark-pages/`.
+Making updates to that directory will prevent your changes from getting overwritten if you decide to update this package.

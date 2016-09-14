@@ -4,9 +4,16 @@ namespace Kirschbaum\LaravelSparkPages;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Page;
+//use App\Page;
 
 class PageController extends Controller {
+
+
+    public function index()
+    {
+        dd('testing123');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

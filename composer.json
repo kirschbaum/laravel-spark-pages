@@ -14,11 +14,11 @@
         }
     ],
     "keywords": ["laravel-spark", "content-management", "pages"],
-    "minimum-stability": "dev",
     "require": {},
     "autoload": {
         "psr-4": {
-            "Kirschbaum\\LaravelSparkPages\\": "vendor/kirschbaum/laravel-spark-pages/src/"
+            "App\\": "app/",
+            "Kirschbaum\\LaravelSparkPages\\": "src/"
         }
     }
 }

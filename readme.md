@@ -14,55 +14,59 @@ Add the package to your existing Spark installation:
 composer require kirschbaum\laravel-spark-pages
 ```
 
-The below route must be placed at the VERY BOTTOM of your routes.php file,
-or else the /{slug} route will match every route above and get called 100% of the time.
+Add the following to the `providers` array in `config/app.php`:
+
+```
+Kirschbaum\LaravelSparkPages\PagesServiceProvider::class
+```
+
+Publish migrations:
+
+```
+php artisan vendor:publish --provider="Kirschbaum\LaravelSparkPages\PagesServiceProvider" --tag='migrations'
+```
+
+Run migrations:
+
+```
+php artisan migrate
+```
+
+Publish assets:
+
+```
+php artisan vendor:publish --provider="Kirschbaum\LaravelSparkPages\PagesServiceProvider" --tag='assets'
+```
+
+Add the following line to `resources/assets/js/app.js`:
+
+```
+require('./laravel-spark-pages-components/delete-button');
+```
+
+Run gulp:
+
+```
+gulp
+```
+
+Finally, add the following route to your routes.php file.  It MUST be place at the VERY BOTTOM of the file or else the /{slug} route will match every request.
 
 ~~~
 Route::get('/{slug}', '\Kirschbaum\LaravelSparkPages\PageController@show');
 ~~~
 
-Add `Kirschbaum\LaravelSparkPages\PagesServiceProvider::class` to the `providers` array in config/app.php.
-
-Publish the package migrations:
-
-~~~
-php artisan vendor:publish --provider="Kirschbaum\LaravelSparkPages\PagesServiceProvider" --tag='migrations'
-~~~
-
-Then run migration to setup the pages table:
-
-~~~
-php artisan migrate
-~~~
-
-Publish the assets:
-
-~~~
-php artisan vendor:publish --provider="Kirschbaum\LaravelSparkPages\PagesServiceProvider" --tag='assets'
-~~~
-
-Add the following line to `resources/assets/js/app.js`
-
-~~~
-require('./laravel-spark-pages-components/delete-button');
-~~~
-
-Make sure to run `gulp`!
-
 ## Features
 
-Create new pages for your Laravel Spark application by navigating to `/pages/create`.  Check the "publish" checkbox
-in order to make the page live on your site.
+* The ability to add/edit pages is restricted to users with email addresses in the spark developers array.
+* Provides simple Summernote WYSIWYG editor.
+* Provides a simple editable sidebar.
+* A user with appropriate permissions will see a `create` button in the dropdown options list. If the user is on a page that can be edited, an `edit` link will be visible.
+* Only pages that a marked `published` will be visible to non-developers.
+* Ability to delete pages (note that this is a hard delete).
+* All views can be customized by editing the view file found in `resources/views/vendor/laravel-spark-pages/`.
 
-You can navigate to the pages you create and publish by using the slug you entered and browsing to `/{slug}`.
-
-To edit the page you created, navigate to the page and click on the "edit" button, or navigate directly to `/pages/{slug}/edit`.
-
-To take pages offline, uncheck the "publish" checkbox.
-
-You can delete pages by navigating to the edit page, where a "delete" button is provided.  By default, these are hard deletes,
-so exercise caution when deleting as you will permanently lose the content you have created for that page.  Remember, you can
-simply uncheck the "publish" checkbox instead of completely deleting pages if you'd like to take them offline.
-
-If you want to customize the views, feel free to do so in the following folder:  `resources/views/vendor/laravel-spark-pages/`.
-Making updates to that directory will prevent your changes from getting overwritten if you decide to update this package.
+## Roadmap
+* List view for pages.
+* Built in SEO tools.
+* Ability to have multipe types of sidebars and add select which to use on a page-by-page basis.

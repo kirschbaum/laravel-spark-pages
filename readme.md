@@ -1,5 +1,7 @@
 # Laravel Spark Pages
 
+**Note that this package is under active development.** We expect to have a stable version in the next week or two. In the meantime, use caution and feel free to submit a pull request if you see anything amiss.
+
 ## Overview
 
 This package adds a simple CMS-like page system to [Laravel Spark](https://spark.laravel.com/ "Laravel Spark"). It allows developers and non-technical users to add and edit pages (articles, blog posts, FAQ's etc.) very quickly and without the need for a deployment.

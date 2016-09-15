@@ -2,13 +2,17 @@
 
 ## Overview
 
-This package adds a simple CMS-like page system to Laravel Spark. It allows developers and non-technical users to add and edit pages (articles, blog posts, FAQ's etc.) very quickly and without the need for a deployment.
+This package adds a simple CMS-like page system to [Laravel Spark](https://spark.laravel.com/ "Laravel Spark"). It allows developers and non-technical users to add and edit pages (articles, blog posts, FAQ's etc.) very quickly and without the need for a deployment.
 
 We have purposely chosen not to overcomplicate this add-on. If your product is successful and you end up needing more bells and whissles you may want to look into building your own solution. This is meant as a minimally viable solution that can be used until the product is worth investing more resources into. At that point you will probably want to build your own CMS-like functionality.
 
 ## Installation
 
-Add the package by typing `composer require LaravelSparkPages`
+Add the package to your existing Spark installation:
+
+```
+composer require kirschbaum\laravel-spark-pages
+```
 
 The below route must be placed at the VERY BOTTOM of your routes.php file,
 or else the /{slug} route will match every route above and get called 100% of the time.

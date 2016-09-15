@@ -69,7 +69,8 @@ Route::get('/{slug}', '\Kirschbaum\LaravelSparkPages\PageController@show');
 * All views can be customized by editing the view file found in `resources/views/vendor/laravel-spark-pages/`.
 
 ## Roadmap
-* List view for pages.
+* Confirm this works with Spark 2.0
 * Support nested folder structure slugs (e.g. /blog/my-awesome-post)
 * Build in SEO tools.
+* List view for pages.
 * Ability to have multipe types of sidebars and select which to use on a page-by-page basis.

@@ -13,7 +13,7 @@ We have purposely chosen not to overcomplicate this add-on. If your product is s
 Add the package to your existing Spark installation:
 
 ```
-composer require kirschbaum\laravel-spark-pages
+composer require kirschbaum/laravel-spark-pages:dev-master
 ```
 
 Add the following to the `providers` array in `config/app.php`:

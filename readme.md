@@ -52,11 +52,6 @@ Run gulp:
 gulp
 ```
 
-Finally, add the following route to your routes.php file, or if using Laravel 5.3 your web.php file.  This route MUST be place at the VERY BOTTOM of the file or else it will match every request and cause problems.
-
-~~~
-Route::get('/{slug}', '\Kirschbaum\LaravelSparkPages\PageController@show');
-~~~
 
 **@TODO Document adding menu links.**
 

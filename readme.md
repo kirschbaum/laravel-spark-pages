@@ -2,11 +2,9 @@
 
 ## Overview
 
-This package allows for the easy adding and editing of pages to your Laravel Spark app.
+This package adds a simple CMS-like page system to Laravel Spark. It allows developers and non-technical users to add and edit pages (articles, blog posts, FAQ's etc.) very quickly and without the need for a deployment.
 
-Non-programmers can easily build and maintain these pages, as they work like an extremely easy content management system.
-
-This can be useful for pages such as "About", "Contact", "Terms of Service" and "Privacy Policy" styled-pages.
+We have purposely chosen not to overcomplicate this add-on. If your product is successful and you end up needing more bells and whissles you may want to look into building your own solution. This is meant as a minimally viable solution that can be used until the product is worth investing more resources into. At that point you will probably want to build your own CMS-like functionality.
 
 ## Installation
 

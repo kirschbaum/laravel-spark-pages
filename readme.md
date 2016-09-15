@@ -58,6 +58,9 @@ Finally, add the following route to your routes.php file.  This route MUST be pl
 Route::get('/{slug}', '\Kirschbaum\LaravelSparkPages\PageController@show');
 ~~~
 
+**@TODO Document adding menu links.
+@TODO Document editing sidebar.**
+
 ## Features
 
 * The ability to add/edit/delete pages is restricted to users with email addresses in the spark developers array.

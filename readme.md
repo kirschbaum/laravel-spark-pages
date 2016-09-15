@@ -50,7 +50,7 @@ Run gulp:
 gulp
 ```
 
-Finally, add the following route to your routes.php file.  It MUST be place at the VERY BOTTOM of the file or else the /{slug} route will match every request.
+Finally, add the following route to your routes.php file.  This route MUST be place at the VERY BOTTOM of the file or else it will match every request and cause problems.
 
 ~~~
 Route::get('/{slug}', '\Kirschbaum\LaravelSparkPages\PageController@show');
@@ -58,7 +58,7 @@ Route::get('/{slug}', '\Kirschbaum\LaravelSparkPages\PageController@show');
 
 ## Features
 
-* The ability to add/edit pages is restricted to users with email addresses in the spark developers array.
+* The ability to add/edit/delete pages is restricted to users with email addresses in the spark developers array.
 * Provides simple Summernote WYSIWYG editor.
 * Provides a simple editable sidebar.
 * A user with appropriate permissions will see a `create` button in the dropdown options list. If the user is on a page that can be edited, an `edit` link will be visible.
@@ -68,5 +68,6 @@ Route::get('/{slug}', '\Kirschbaum\LaravelSparkPages\PageController@show');
 
 ## Roadmap
 * List view for pages.
-* Built in SEO tools.
-* Ability to have multipe types of sidebars and add select which to use on a page-by-page basis.
+* Support nested folder structure slugs (e.g. /blog/my-awesome-post)
+* Build in SEO tools.
+* Ability to have multipe types of sidebars and select which to use on a page-by-page basis.

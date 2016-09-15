@@ -12,7 +12,7 @@ class CreatePagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('pages', function (Blueprint $table) {
+        Schema::create('spark_pages', function (Blueprint $table) {
             $table->increments('id');
             $table->string('slug')->unique();
             $table->string('title');
@@ -29,6 +29,6 @@ class CreatePagesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('pages');
+        Schema::drop('spark_pages');
     }
 }

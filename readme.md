@@ -61,7 +61,7 @@ Route::get('/{slug}', '\Kirschbaum\LaravelSparkPages\PageController@show');
 ## Features
 
 * The ability to add/edit/delete pages is restricted to users with email addresses in the spark developers array.
-* Provides simple Summernote WYSIWYG editor.
+* Provides simple [Summernote WYSIWYG editor](http://summernote.org/ "Summernote WYSIWYG editor").
 * Provides a simple editable sidebar.
 * A user with appropriate permissions will see a `create` button in the dropdown options list. If the user is on a page that can be edited, an `edit` link will be visible.
 * Only pages that a marked `published` will be visible to non-developers.

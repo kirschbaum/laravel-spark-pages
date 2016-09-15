@@ -59,6 +59,7 @@ Route::get('/{slug}', '\Kirschbaum\LaravelSparkPages\PageController@show');
 ~~~
 
 **@TODO Document adding menu links.**
+
 **@TODO Document editing sidebar.**
 
 ## Features

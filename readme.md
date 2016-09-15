@@ -58,8 +58,8 @@ Finally, add the following route to your routes.php file.  This route MUST be pl
 Route::get('/{slug}', '\Kirschbaum\LaravelSparkPages\PageController@show');
 ~~~
 
-**@TODO Document adding menu links.
-@TODO Document editing sidebar.**
+**@TODO Document adding menu links.**
+**@TODO Document editing sidebar.**
 
 ## Features
 

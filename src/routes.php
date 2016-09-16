@@ -8,3 +8,4 @@ Route::group(['middleware' => ['web', 'dev']], function () {
     Route::get('/pages/{slug}/edit', '\Kirschbaum\LaravelSparkPages\PageController@edit');
 });
 
+Route::get('/{slug1}/{slug2?}', '\Kirschbaum\LaravelSparkPages\PageController@show');

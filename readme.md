@@ -56,7 +56,7 @@ gulp
 If you'd like to add a link in your developer's dropdown menu, you can do that by adding the below "Add Page" link to your
 resources/views/vendor/spark/nav/developer.blade.php file:
 
-~~~
+```html
 <!-- Kiosk -->
 <li>
     <a href="/spark/kiosk">
@@ -66,7 +66,7 @@ resources/views/vendor/spark/nav/developer.blade.php file:
         <i class="fa fa-fw fa-btn fa-plus"></i>Add Page
     </a>
 </li>
-~~~
+```
 
 
 

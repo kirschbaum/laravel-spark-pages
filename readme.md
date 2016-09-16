@@ -68,10 +68,6 @@ resources/views/vendor/spark/nav/developer.blade.php file:
 </li>
 ```
 
-
-
-**@TODO Document adding menu links.**
-
 **@TODO Document editing sidebar.**
 
 ## Features

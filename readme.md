@@ -58,6 +58,24 @@ Finally, add the following route to your routes.php file, or if using Laravel 5.
 Route::get('/{slug}', '\Kirschbaum\LaravelSparkPages\PageController@show');
 ~~~
 
+If you'd like to add a link in your dropdown menu
+If you'd like to add a link in your developer's dropdown menu, you can do that by adding the below "Add Page" link to your
+resources/views/vendor/spark/nav/developer.blade.php file:
+
+~~~
+<!-- Kiosk -->
+<li>
+    <a href="/spark/kiosk">
+        <i class="fa fa-fw fa-btn fa-fort-awesome"></i>Kiosk
+    </a>
+    <a href="/pages/create">
+        <i class="fa fa-fw fa-btn fa-plus"></i>Add Page
+    </a>
+</li>
+~~~
+
+
+
 **@TODO Document adding menu links.**
 
 **@TODO Document editing sidebar.**

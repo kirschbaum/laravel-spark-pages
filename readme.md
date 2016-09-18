@@ -71,6 +71,9 @@ resources/views/vendor/spark/nav/developer.blade.php file:
 </li>
 ```
 
+## Editing the Sidebar
+
+The template for the sidebar is located at ``
 **@TODO Document editing sidebar.**
 
 ## Features

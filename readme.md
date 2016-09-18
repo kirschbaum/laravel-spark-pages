@@ -1,7 +1,7 @@
 # Laravel Spark Pages
 
   * [Overview](#overview)
-  * [Features](#overview)
+  * [Features](#features)
   * [Installation](#installing)
   * [Adding an "Add Page" Dropdown Menu Link](#dropdown)
   * [Editing the Sidebar](#sidebar)

@@ -73,8 +73,13 @@ If you'd like to add a link in your developer's dropdown menu, you can do that b
 
 ## Editing the Sidebar
 
-The template for the sidebar is located at ``
-**@TODO Document editing sidebar.**
+The template for the sidebar is located at `resources/views/vendor/laravel-spark-pages/sidebar.blade.php`. Modify this file to your heart's content. 
+
+
+## Editing Pages
+
+Navigate to the page you want to edit. If the user you are logged in as has their email address in the Spark developers array then you will see an admin section in the sidebar with the link "Edit this page".
+
 
 ## Features
 
@@ -85,6 +90,7 @@ The template for the sidebar is located at ``
 * Only pages that a marked `published` will be visible to non-developers.
 * Ability to delete pages (note that this is a hard delete).
 * All views can be customized by editing the view file found in `resources/views/vendor/laravel-spark-pages/`.
+
 
 ## Roadmap
 * Confirm this works with Spark 2.0

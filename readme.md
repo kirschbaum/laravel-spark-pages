@@ -1,6 +1,14 @@
 # Laravel Spark Pages
 
+  * [Overview](#overview)
+  * [Features](#overview)
+  * [Installation](#installing)
+  * [Adding an "Add Page" Dropdown Menu Link](#dropdown)
+  * [Editing the Sidebar](#sidebar)
+  * [Editing Pages](#editing)
+  * [Road Map](#roadmap)
 
+<a name=overview></a>
 ## Overview
 
 This package adds a simple CMS-like page system to [Laravel Spark](https://spark.laravel.com/ "Laravel Spark"). It allows developers and non-technical users to add and edit pages (articles, blog posts, FAQ's etc.) very quickly and without the need for a deployment.
@@ -13,6 +21,7 @@ We have purposely chosen not to overcomplicate this add-on. If your product is s
 
 **Note that this package is under active development.** Feel free to open an issue and/or submit a pull request if you see anything amiss.
 
+<a name=features></a>
 ## Features
 
 * The ability to add/edit/delete pages is restricted to users with email addresses in the spark developers array.
@@ -24,6 +33,7 @@ We have purposely chosen not to overcomplicate this add-on. If your product is s
 * All views can be customized by editing the view file found in `resources/views/vendor/laravel-spark-pages/`.
 * Supports nested folder structure slugs (e.g. /blog/my-awesome-post)
 
+<a name=installing></a>
 ## Basic Installation
 
 Add the package to your existing Spark installation:
@@ -68,6 +78,7 @@ Run gulp:
 gulp
 ```
 
+<a name=dropdown></a>
 ## Adding an "Add Page" Dropdown Menu Link
 
 If you'd like to add a link in your developer's dropdown menu, you can do that by adding the below "Add Page" link to your
@@ -86,18 +97,19 @@ If you'd like to add a link in your developer's dropdown menu, you can do that b
 ```
 ![Alt text](https://www.dropbox.com/s/hhlf8bsnld1t2xl/Screenshot%202016-09-18%2013.00.59.png?raw=1)
 
+<a name=sidebar></a>
 ## Editing the Sidebar
 
 The template for the sidebar is located at `resources/views/vendor/laravel-spark-pages/sidebar.blade.php`. Modify this file to your heart's content. 
 
-
+<a name=editing></a>
 ## Editing Pages
 
 Navigate to the page you want to edit. If the user you are logged in as has their email address in the Spark developers array then you will see an admin section in the sidebar with the link "Edit this page".
 
 ![Alt text](https://www.dropbox.com/s/g6cgmvl5u6ulxkw/Screenshot%202016-09-18%2013.04.27.png?raw=1)
 
-
+<a name=roadmap></a>
 ## Roadmap
 * Build in SEO tools.
 * List view for pages.

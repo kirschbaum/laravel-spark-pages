@@ -6,14 +6,16 @@
 
 This package adds a simple CMS-like page system to [Laravel Spark](https://spark.laravel.com/ "Laravel Spark"). It allows developers and non-technical users to add and edit pages (articles, blog posts, FAQ's etc.) very quickly and without the need for a deployment.
 
-We have purposely chosen not to overcomplicate this add-on. If your product is successful and you end up needing more bells and whissles you may want to look into building your own solution. This is meant as a minimally viable solution that can be used until the product is worth investing more resources into. At that point you will probably want to build your own CMS-like functionality.
+This package is compatible with both *Spark 1.x* and Spark *2.x versions*.
 
-## Installation
+We have purposely chosen not to overcomplicate this add-on. If your product is successful and you end up needing more bells and whistles you may want to look into building your own solution. This is meant as a minimally viable solution that can be used until the product is worth investing more resources into.
+
+## Basic Installation
 
 Add the package to your existing Spark installation:
 
 ```
-composer require kirschbaum/laravel-spark-pages:dev-master
+composer require kirschbaum/laravel-spark-pages
 ```
 
 Add the following to the `providers` array in `config/app.php`:
@@ -52,6 +54,7 @@ Run gulp:
 gulp
 ```
 
+## Adding an "Add Page" Dropdown Menu Link
 
 If you'd like to add a link in your developer's dropdown menu, you can do that by adding the below "Add Page" link to your
 resources/views/vendor/spark/nav/developer.blade.php file:

@@ -6,7 +6,7 @@
 
 This package adds a simple CMS-like page system to [Laravel Spark](https://spark.laravel.com/ "Laravel Spark"). It allows developers and non-technical users to add and edit pages (articles, blog posts, FAQ's etc.) very quickly and without the need for a deployment.
 
-This package is compatible with both **Spark 1.x** and Spark **2.x** versions.
+This package is compatible with both **Spark 1.x** and  **Spark 2.x** versions.
 
 We have purposely chosen not to overcomplicate this add-on. If your product is successful and you end up needing more bells and whistles you may want to look into building your own solution. This is meant as a minimally viable solution that can be used until the product is worth investing more resources into.
 

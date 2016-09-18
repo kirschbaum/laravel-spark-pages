@@ -13,6 +13,17 @@ We have purposely chosen not to overcomplicate this add-on. If your product is s
 
 **Note that this package is under active development.** Feel free to open an issue and/or submit a pull request if you see anything amiss.
 
+## Features
+
+* The ability to add/edit/delete pages is restricted to users with email addresses in the spark developers array.
+* Provides simple [Summernote WYSIWYG editor](http://summernote.org/ "Summernote WYSIWYG editor").
+* Provides a simple editable sidebar.
+* A user with appropriate permissions will see a `create` button in the dropdown options list. If the user is on a page that can be edited, an `edit` link will be visible.
+* Only pages that a marked `published` will be visible to non-developers.
+* Ability to delete pages (note that this is a hard delete).
+* All views can be customized by editing the view file found in `resources/views/vendor/laravel-spark-pages/`.
+* Supports nested folder structure slugs (e.g. /blog/my-awesome-post)
+
 ## Basic Installation
 
 Add the package to your existing Spark installation:
@@ -73,6 +84,7 @@ If you'd like to add a link in your developer's dropdown menu, you can do that b
     </a>
 </li>
 ```
+![Alt text](https://www.dropbox.com/s/hhlf8bsnld1t2xl/Screenshot%202016-09-18%2013.00.59.png?raw=1)
 
 ## Editing the Sidebar
 
@@ -83,21 +95,10 @@ The template for the sidebar is located at `resources/views/vendor/laravel-spark
 
 Navigate to the page you want to edit. If the user you are logged in as has their email address in the Spark developers array then you will see an admin section in the sidebar with the link "Edit this page".
 
-
-## Features
-
-* The ability to add/edit/delete pages is restricted to users with email addresses in the spark developers array.
-* Provides simple [Summernote WYSIWYG editor](http://summernote.org/ "Summernote WYSIWYG editor").
-* Provides a simple editable sidebar.
-* A user with appropriate permissions will see a `create` button in the dropdown options list. If the user is on a page that can be edited, an `edit` link will be visible.
-* Only pages that a marked `published` will be visible to non-developers.
-* Ability to delete pages (note that this is a hard delete).
-* All views can be customized by editing the view file found in `resources/views/vendor/laravel-spark-pages/`.
+![Alt text](https://www.dropbox.com/s/g6cgmvl5u6ulxkw/Screenshot%202016-09-18%2013.04.27.png?raw=1)
 
 
 ## Roadmap
-* Confirm this works with Spark 2.0
-* Support nested folder structure slugs (e.g. /blog/my-awesome-post)
 * Build in SEO tools.
 * List view for pages.
 * Ability to have multipe types of sidebars and select which to use on a page-by-page basis.

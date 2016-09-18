@@ -1,8 +1,6 @@
 # Laravel Spark Pages
 
-
-
-**Note that this package is under active development.** Feel free to open an issue and/or submit a pull request if you see anything amiss.
+![Alt text](https://www.dropbox.com/s/5z0xr3hotkd9xt5/laravel-spark-pages.png?raw=1)
 
 ## Overview
 
@@ -11,6 +9,8 @@ This package adds a simple CMS-like page system to [Laravel Spark](https://spark
 This package is compatible with both **Spark 1.x** and  **Spark 2.x** versions.
 
 We have purposely chosen not to overcomplicate this add-on. If your product is successful and you end up needing more bells and whistles you may want to look into building your own solution. This is meant as a minimally viable solution that can be used until the product is worth investing more resources into.
+
+**Note that this package is under active development.** Feel free to open an issue and/or submit a pull request if you see anything amiss.
 
 ## Basic Installation
 

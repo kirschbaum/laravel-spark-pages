@@ -3,7 +3,6 @@
 namespace Kirschbaum\LaravelSparkPages;
 
 use App\Http\Controllers\Controller;
-use Kirschbaum\LaravelSparkPages\Page;
 use Illuminate\Http\Request;
 
 class PageController extends Controller {
@@ -27,10 +26,13 @@ class PageController extends Controller {
     public function store(Request $request)
     {
         $published = false;
+
         if(null != $request->input('published')){
             $published = true;
         }
+
         $slug = $this->ensureTheSlugBeginsWithASlash($request);
+
         Page::create([
             'slug' => $slug,
             'title' => $request->input('title'),
@@ -44,17 +46,17 @@ class PageController extends Controller {
     /**
      * Display the specified resource.
      *
-     * @param $slug1
-     * @param null $slug2
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function show($slug1, $slug2 = null)
+    public function show()
     {
-        $slug = $this->formatSlugForQuery($slug1, $slug2);
+        $slug = app('request')->server->get('REQUEST_URI');
         $page = Page::whereSlug($slug)->firstOrFail();
+
         if($page->published){
             return view('vendor.laravel-spark-pages.display', compact(['page']));
         }
+
         return redirect('/login');
     }
 
@@ -67,6 +69,7 @@ class PageController extends Controller {
     public function edit($slug)
     {
         $page = Page::whereSlug($slug)->firstOrFail();
+
         return view('vendor.laravel-spark-pages.create_edit', compact(['page']));
     }
 
@@ -81,6 +84,7 @@ class PageController extends Controller {
     {
         $page = Page::whereSlug($slug)->firstOrFail();
         $published = false;
+
         if(null != $request->input('published')){
             $published = true;
         }
@@ -91,6 +95,7 @@ class PageController extends Controller {
             'body'      => $request->input('body'),
             'published' => $published,
         ]);
+
         return redirect("{$request->input('slug')}");
     }
 
@@ -109,18 +114,11 @@ class PageController extends Controller {
     {
         $slug = $request->input('slug');
         $potentially_a_slash_character = substr($slug, 0, 1);
+
         if($potentially_a_slash_character != '/'){
             $slug = '/' . $slug;
         }
-        return $slug;
-    }
 
-    private function formatSlugForQuery($slug1, $slug2)
-    {
-        $slug = '/' . $slug1;
-        if($slug2){
-            $slug .= '/' . $slug2;
-        }
         return $slug;
     }
 }

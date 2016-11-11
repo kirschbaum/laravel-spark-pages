@@ -2,123 +2,60 @@
 
 namespace Kirschbaum\LaravelSparkPages;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use Illuminate\Support\ServiceProvider;
 
-class PageController extends Controller {
-
+class PagesServiceProvider extends ServiceProvider
+{
     /**
-     * Show the form for creating a new resource.
+     * Bootstrap the application services.
      *
-     * @return \Illuminate\Http\Response
+     * @return void
      */
-    public function create()
+    public function boot()
     {
-        return view('vendor.laravel-spark-pages.create_edit');
+        $this->registerRoutes();
+        $this->publishMigrations();
+        $this->publishAssets();
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Register the application services.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return void
      */
-    public function store(Request $request)
+    public function register()
     {
-        $published = false;
+        $this->app->make('Kirschbaum\LaravelSparkPages\PageController');
+        $this->app->make('Kirschbaum\LaravelSparkPages\Page');
+        $this->registerViewFiles();
+    }
 
-        if(null != $request->input('published')){
-            $published = true;
+
+    private function publishMigrations()
+    {
+        $this->publishes([
+            __DIR__.'/../database/migrations/' => database_path('migrations')
+        ], 'migrations');
+    }
+
+    private function registerRoutes()
+    {
+        if (! $this->app->routesAreCached()) {
+            require __DIR__ . '/routes.php';
         }
-
-        $slug = $this->ensureTheSlugBeginsWithASlash($request);
-
-        Page::create([
-            'slug' => $slug,
-            'title' => $request->input('title'),
-            'body' => $request->input('body'),
-            'published' => $published,
-        ]);
-
-        return redirect("{$request->input('slug')}");
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     */
-    public function show()
+    private function registerViewFiles()
     {
-        $slug = app('request')->server->get('REQUEST_URI');
-        $page = Page::whereSlug($slug)->firstOrFail();
-
-        if($page->published){
-            return view('vendor.laravel-spark-pages.display', compact(['page']));
-        }
-
-        return redirect('/login');
+        $this->loadViewsFrom(__DIR__.'/../views', 'laravel-spark-pages');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param $slug
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($slug)
+    private function publishAssets()
     {
-        $page = Page::whereSlug($slug)->firstOrFail();
-
-        return view('vendor.laravel-spark-pages.create_edit', compact(['page']));
+        $this->publishes([
+            __DIR__.'/../views/' => base_path('resources/views/vendor/laravel-spark-pages'),
+            __DIR__.'/../js/' => base_path('resources/assets/js/laravel-spark-pages-components')
+        ], 'assets');
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param Request $request
-     * @param $slug
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     */
-    public function update(Request $request, $slug)
-    {
-        $page = Page::whereSlug($slug)->firstOrFail();
-        $published = false;
-
-        if(null != $request->input('published')){
-            $published = true;
-        }
-
-        $page->update([
-            'slug'      => $request->input('slug'),
-            'title'     => $request->input('title'),
-            'body'      => $request->input('body'),
-            'published' => $published,
-        ]);
-
-        return redirect("{$request->input('slug')}");
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param $slug
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($slug)
-    {
-        Page::whereSlug($slug)->firstOrFail()->delete();
-    }
-
-    private function ensureTheSlugBeginsWithASlash($request)
-    {
-        $slug = $request->input('slug');
-        $potentially_a_slash_character = substr($slug, 0, 1);
-
-        if($potentially_a_slash_character != '/'){
-            $slug = '/' . $slug;
-        }
-
-        return $slug;
-    }
 }

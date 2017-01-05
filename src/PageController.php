@@ -2,8 +2,9 @@
 
 namespace Kirschbaum\LaravelSparkPages;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Kirschbaum\LaravelSparkPages\Page;
 
 class PageController extends Controller {
 

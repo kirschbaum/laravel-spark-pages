@@ -1,5 +1,6 @@
 # Laravel Spark Pages
-
+  
+  * [Compatibility](#compatibility)
   * [Overview](#overview)
   * [Features](#features)
   * [Installation](#installing)
@@ -8,12 +9,20 @@
   * [Editing Pages](#editing)
   * [Road Map](#roadmap)
 
+<a name=compatibility></a>
+## Compatibility
+
+ Laravel Spark  | Laravel Spark Pages | Laravel |
+:---------------|:--------------------|:--------|
+ 0.4.x          | 0.3.x               | 5.4.*   |
+ 0.3.x          | 0.3.x               | 5.4.*   |
+ 0.2.x          | 0.2.x               | 5.3.*   |
+ 0.1.x          | 0.1.x               | 5.2.*   |
+
 <a name=overview></a>
 ## Overview
 
 This package adds a simple CMS-like page system to [Laravel Spark](https://spark.laravel.com/ "Laravel Spark"). It allows developers and non-technical users to add and edit pages (articles, blog posts, FAQ's etc.) very quickly and without the need for a deployment.
-
-This package is compatible with both **Spark 1.x** and  **Spark 2.x** versions.
 
 ![Alt text](https://www.dropbox.com/s/5z0xr3hotkd9xt5/laravel-spark-pages.png?raw=1)
 
@@ -42,7 +51,7 @@ Add the package to your existing Spark installation:
 composer require kirschbaum/laravel-spark-pages
 ```
 
-Add the following to the `providers` array in `config/app.php`:
+Add the following to the `providers` array in `config/app.php`. This provider must be **registered as the last service provider** on the `providers` array:
 
 ```
 Kirschbaum\LaravelSparkPages\PagesServiceProvider::class
@@ -72,10 +81,10 @@ Add the following line to `resources/assets/js/app.js`:
 require('./laravel-spark-pages-components/delete-button');
 ```
 
-Run gulp:
+Compile your assets:
 
 ```
-gulp
+npm run dev
 ```
 
 <a name=dropdown></a>
